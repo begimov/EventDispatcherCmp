@@ -38,4 +38,16 @@ class DispatcherTest extends TestCase
         $this->assertEquals([$listener], $dispatcher->getListenersByEventName('PromotionCreated'));
     }
 
+    /** @test */
+    public function returns_empty_array_if_no_listeners_added_under_event_name()
+    {
+        $dispatcher = new Dispatcher();
+        $listener = new ListenerStub;
+        $dispatcher->addListener('PromotionCreated', $listener);
+
+        $this->assertCount(0, $dispatcher->getListenersByEventName('PromotionDeleted'));
+        $this->assertEmpty($dispatcher->getListenersByEventName('PromotionDeleted'));
+        $this->assertInternalType('array', $dispatcher->getListenersByEventName('PromotionDeleted'));
+    }
+
 }
