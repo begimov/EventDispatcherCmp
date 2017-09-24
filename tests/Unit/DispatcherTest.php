@@ -50,4 +50,15 @@ class DispatcherTest extends TestCase
         $this->assertInternalType('array', $dispatcher->getListenersByEventName('PromotionDeleted'));
     }
 
+    /** @test */
+    public function can_check_if_any_listeners_registered_for_event()
+    {
+        $dispatcher = new Dispatcher();
+        $listener = new ListenerStub;
+        $dispatcher->addListener('PromotionCreated', $listener);
+
+        $this->assertFalse($dispatcher->hasListeners('PromotionUpdated'));
+        $this->assertTrue($dispatcher->hasListeners('PromotionCreated'));
+    }
+
 }

@@ -20,9 +20,14 @@ class Dispatcher
 
     public function getListenersByEventName($eventName)
     {
-        if (!isset($this->listeners[$eventName])) {
+        if (!$this->hasListeners($eventName)) {
             return [];
         }
         return $this->listeners[$eventName];
+    }
+
+    public function hasListeners($eventName)
+    {
+        return isset($this->listeners[$eventName]);
     }
 }
