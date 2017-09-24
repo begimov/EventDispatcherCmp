@@ -4,5 +4,8 @@ namespace App\Core\Events;
 
 abstract class Event
 {
-    abstract public function getName();
+    public function getName()
+    {
+        return (new \ReflectionClass($this))->getShortName();
+    }
 }
