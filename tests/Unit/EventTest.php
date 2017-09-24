@@ -13,7 +13,7 @@ class EventTest extends TestCase
     {
         $event = new EventStub();
 
-        $this->assertEquals('EventStub', $event->getName());
+        $this->assertEquals('PromotionCreated', $event->getName());
     }
 
     /** @test */
