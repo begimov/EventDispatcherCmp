@@ -13,4 +13,5 @@ return array(
     'DeepCopy\\' => array($vendorDir . '/myclabs/deep-copy/src/DeepCopy'),
     'App\\Tests\\' => array($baseDir . '/tests'),
     'App\\Stubs\\' => array($baseDir . '/stubs'),
+    'App\\' => array($baseDir . '/app'),
 );

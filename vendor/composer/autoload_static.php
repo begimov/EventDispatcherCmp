@@ -28,6 +28,7 @@ class ComposerStaticInit7cd0c584244ccf468dfc260b871e0d3c
         array (
             'App\\Tests\\' => 10,
             'App\\Stubs\\' => 10,
+            'App\\' => 4,
         ),
     );
 
@@ -62,6 +63,10 @@ class ComposerStaticInit7cd0c584244ccf468dfc260b871e0d3c
         array (
             0 => __DIR__ . '/../..' . '/stubs',
         ),
+        'App\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app',
+        ),
     );
 
     public static $prefixesPsr0 = array (
@@ -75,6 +80,8 @@ class ComposerStaticInit7cd0c584244ccf468dfc260b871e0d3c
     );
 
     public static $classMap = array (
+        'App\\Tests\\Stubs\\EventStub' => __DIR__ . '/../..' . '/tests/Stubs/EventStub.php',
+        'App\\Tests\\Unit\\EventTest' => __DIR__ . '/../..' . '/tests/Unit/EventTest.php',
         'DeepCopy\\DeepCopy' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/DeepCopy.php',
         'DeepCopy\\Exception\\CloneException' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/Exception/CloneException.php',
         'DeepCopy\\Filter\\Doctrine\\DoctrineCollectionFilter' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/Filter/Doctrine/DoctrineCollectionFilter.php',
