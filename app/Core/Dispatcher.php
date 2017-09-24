@@ -17,4 +17,9 @@ class Dispatcher
     {
         $this->listeners[$eventName][] = $listener;
     }
+
+    public function getListenersByEventName($eventName)
+    {
+        return $this->listeners[$eventName];
+    }
 }
