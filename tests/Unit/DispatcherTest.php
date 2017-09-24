@@ -22,6 +22,9 @@ class DispatcherTest extends TestCase
         $dispatcher = new Dispatcher();
         $listener = new ListenerStub;
         $dispatcher->addListener('PromotionCreated', $listener);
+
+        $this->assertCount(1, $dispatcher->getListeners()['PromotionCreated']);
+        $this->assertEquals($listener, $dispatcher->getListeners()['PromotionCreated'][0]);
     }
 
 }
